@@ -1,0 +1,26 @@
+<!-- views/hello.js-->
+<!--
+    EJS는 Embedded Javascript의 약자로 Express에서 dynamic website를 만들기 위해
+    template으로 사용되는 파일.(확장자 이름은 .ejs)
+    ejs파일을 사용하기 위해서는 res.render함수를 이용해야 하며,
+    첫번째 parameter로 ejs의 이름을, 두번째 parameter로 ejs에서 사용될 object를 전달.
+    res.render함수는 ejs를 /views 폴더에서 찾으므로 views폴더의 이름은 변경되면 안됨.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="/css/master.css">
+</head>
+<body>
+    <h1>Hello
+        <% if(name){ %>
+            <span class="name"><%= name %>!</span>
+        <% } else { %>
+            <span class="stranger">Stranger!</span>
+        <% } %>        
+    </h1>
+</body>
+</html>
